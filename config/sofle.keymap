@@ -52,15 +52,15 @@
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |     |      |      |       |       |      |                |      |      |       |      |       |       |
-// |     |  [   |  ]   |       |       |      |                |      |      |   ^   |      |       |       |
-// |     |  {   |  }   |       |       |      |                |      |   <- |   v   |  ->  |  DEL  | BKSPC |
-// |     |      |      |       |       |      |      |  |      |      |      |       |      |   \   |       |
+// |     |  [   |  ]   |       |       |      |                |      |      |   ^   |      |       | BKSPC |
+// |     |  {   |  }   |       |       |      |                |      |   <- |   v   |  ->  |  DEL  |       |
+// |     |  (   |  )   |       |       |      |      |  |      |      |      |       |      |   \   |       |
 //              |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <  
 &trans   &none      &none      &none     &none     &none                    &none     &none     &none    &none     &none   &none
 &trans   &kp RBKT   &kp LBKT   &none     &none     &none                    &none     &none     &kp UP   &none     &none   &kp BSPC
 &trans   &kp LBRC   &kp RBRC   &none     &none     &none                    &none     &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &none
-&trans   &none      &none      &none     &none     &none   &trans   &trans  &none     &none     &none    &none    &none   &trans
+&trans   &kp LPAR   &kp RPAR   &none     &none     &none   &trans   &trans  &none     &none     &none    &none    &none   &trans
                     &trans     &trans    &trans    &trans  &trans   &trans  &trans    &trans    &trans   &trans
             >;
 
@@ -78,7 +78,7 @@
             bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &none   &kp F10   &kp F11  &kp F12  &none   &none  
 &trans     &none     &none     &none     &kp PSCRN    &kp INS                     &none   &kp F7    &kp F8   &kp F9   &none   &trans   
-&CAPS      &none     &none     &none     &kp K_UNDO   &kp K_CUT                   &none   &kp F4    &kp F5   &kp F6   &none   &none  
+&kp CAPS   &none     &none     &none     &kp K_UNDO   &kp K_CUT                   &none   &kp F4    &kp F5   &kp F6   &none   &none  
 &trans     &none     &none     &none     &kp K_COPY   &kp K_PASTE &trans   &trans &none   &kp F1    &kp F2   &kp F3   &none   &trans
                      &trans    &trans    &trans       &trans      &trans   &trans &trans  &trans    &trans   &trans
             >;
