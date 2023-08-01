@@ -51,14 +51,14 @@
 
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |     |      |      |       |       |      |                |      |      |       |      |       |       |
+// |     |      |      |       |       |      |                |      |      |       |      |       | GMING |
 // |     |  [   |  ]   |       |       |      |                |      |      |   ^   |      |       | BKSPC |
 // |     |  {   |  }   |       |       |      |                |      |   <- |   v   |  ->  |  DEL  |       |
 // |     |  (   |  )   |       |       |      |      |  |      |      |      |       |      |   \   |       |
 //              |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <  
-&trans   &none      &none      &none     &none     &none                    &none     &none     &none    &none     &none   &none
-&trans   &kp RBKT   &kp LBKT   &none     &none     &none                    &none     &none     &kp UP   &none     &none   &kp BSPC
+&trans   &none      &none      &none     &none     &none                    &none     &none     &none    &none     &none   &to 4
+&trans   &kp LBKT   &kp RBKT   &none     &none     &none                    &none     &none     &kp UP   &none     &none   &kp BSPC
 &trans   &kp LBRC   &kp RBRC   &none     &none     &none                    &none     &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &none
 &trans   &kp LPAR   &kp RPAR   &none     &none     &none   &trans   &trans  &none     &none     &none    &none    &none   &trans
                     &trans     &trans    &trans    &mo 3  &trans   &trans  &trans    &trans    &trans   &trans
@@ -81,6 +81,24 @@
 &kp CAPS   &none     &none     &none     &kp K_UNDO   &kp K_CUT                   &none   &kp F4    &kp F5   &kp F6   &none   &none  
 &trans     &none     &none     &none     &kp K_COPY   &kp K_PASTE &trans   &trans &none   &kp F1    &kp F2   &kp F3   &none   &trans
                      &trans    &trans    &trans       &trans      &trans   &trans &trans  &trans    &trans   &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        gaming_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   -   |
+// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
+// |  ALT  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//               | GUI | CTRL  | ENTER | LOWER|  SPACE |  | ENTER | RAISE| CTRL  | ALT   | GUI  |
+            bindings = <
+&kp ESC   &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp MINUS
+&kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                       &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
+&kp LALT   &kp A  &kp S    &kp D    &kp F     &kp G                       &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
+&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B  &kp C_MUTE &none     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+                 &kp LGUI &kp LCTRL &kp RET &mo 1  &kp SPACE   &kp RET &mo 2  &kp RCTRL &kp RALT  &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
